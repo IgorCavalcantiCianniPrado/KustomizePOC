@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kustomize-poc-deployment
+  namespace: base
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: kustomize-poc-pod
+      labels:
+        app: kustomize-poc-pod-label
+    spec:
+      containers:
+        - name: kustomize-poc-container
+          image: igorcavalcanticianniprado/kustomize-poc:v1
+          envFrom:
+          - configMapRef:
+              name: kustomize-poc-config-map
+  selector:
+    matchLabels:
+      app: kustomize-poc-pod-label

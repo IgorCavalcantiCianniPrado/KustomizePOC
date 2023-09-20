@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: kustomize-poc-config-map
+  namespace: base
+data:
+  propriedades__prop1: "Prop1 na base"
+  propriedades__prop2: "Prop2 na base"
+  propriedades__prop3: "Prop3 na base"
