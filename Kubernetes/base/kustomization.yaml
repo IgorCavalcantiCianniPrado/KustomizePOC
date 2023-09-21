@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
 - Namespace.yaml
 - Deployment.yaml
-- ConfigMap.yaml
